@@ -1,0 +1,387 @@
+<mvc:View controllerName="portalapp.controller.ViewQuote" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:uxap="sap.uxap" 
+xmlns="sap.m" 
+xmlns:core="sap.ui.core">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="false" showHeaderContent="true" showEditHeaderButton="false" showFooter="false" class="sapUiSizeCompact">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="Supplier" objectSubtitle="330277 - Artes Papelaria" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true" showPlaceholder="true" objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="Quote Detail"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <Button text="Edit" iconFirst="false" type="Emphasized" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="Delete" iconFirst="false" type="Transparent" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="" icon="sap-icon://action" iconFirst="true" type="Transparent" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent/>
+        <uxap:sections>
+            <uxap:ObjectPageSection title="Purchaser">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Purchaser">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" itemPress="_onFioriObjectPageTableItemPress">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button text="Emitir Recibo" icon="sap-icon://print" iconFirst="false" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button text="Ver/Incluir Anexo" icon="sap-icon://upload" iconFirst="false" type="Transparent" press="_onFioriObjectPageTableActionPress">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Data Cotação" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Prazo Apres" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Comprador" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Telefone" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Email" width="auto"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Navigation">
+                                        <cells>
+                                            <ObjectStatus text="04/08/2023"/>
+                                            <ObjectStatus text="04/08/2023"/>
+                                            <ObjectStatus text="Thainara Gonzaga"/>
+                                            <ObjectStatus text="3847-7057"/>
+                                            <ObjectStatus text="thainara.gonzagapimentel@aperam.com"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Delivery address">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Delivery address">
+                        <uxap:blocks>
+                            <VBox alignItems="Stretch" direction="Column" fitContainer="false" width="403.00000000px" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                <items>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Local entr./Prest. serv.:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Start" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Moeda da Cotação:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="BRL" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Nr proposta fornecedor:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input id="Fiori_ObjectPage_ObjectPage_0-sections-Fiori_ObjectPage_Section-1697228101827-sectionContent-sap_m_VBox-1697229575638-items-sap_m_HBox-1697238395211-items-sap_m_Input-1697238458912" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="true" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Cond Pgto. :" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+                                                <items>
+                                                    <core:Item text="045 DDL - DIAS LÍQUIDO DA EMISSÃO N.F" enabled="true" key="045 DDL - DIAS LÍQUIDO DA EMISSÃO N.F"/>
+                                                    <core:Item text="007 DDL - DIAS LÍQUIDO DA EMISSÃO N.F" enabled="true" key="007 DDL - DIAS LÍQUIDO DA EMISSÃO N.F"/>
+                                                    <core:Item text="015 DDL - DIAS LÍQUIDO DA EMISSÃO N.F" enabled="true" key="015 DDL - DIAS LÍQUIDO DA EMISSÃO N.F"/>
+                                                </items>
+                                            </ComboBox>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Condição de Venda :" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <ComboBox editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+                                                <items>
+                                                    <core:Item text="CIF - Entrega na empresa" enabled="true" key="CIF - Entrega na empresa"/>
+                                                    <core:Item text="FOB - Entrega transport." enabled="true" key="FOB - Entrega transport."/>
+                                                    <core:Item text="Item" enabled="true" key="Item"/>
+                                                </items>
+                                            </ComboBox>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Start" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Nº RFQ Coletiva:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="CNPJ de Faturamento:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                </items>
+                                <layoutData/>
+                            </VBox>
+                            <VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                <items>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Empresa:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="Aperam Inox América do Sul S.A." type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="CNPJ" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="33.390.170-0013/12" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Insc. Estadual:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="6870133420352" type="Text" showValueHelp="false" enabled="false" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Endereço:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="Usina Siderurgica da Aperam" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Bairro:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="Portaria 8" type="Text" showValueHelp="false" enabled="true" visible="true" width="91.99652862548828px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                            <Label text="CEP" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="35180-018" type="Text" showValueHelp="false" enabled="true" visible="true" width="125.98958587646484px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceBetween" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Cidade:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="TIMOTEO" type="Text" showValueHelp="false" enabled="false" visible="true" width="129.00000000px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                            <Label text="Estado:" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <Input value="MG" type="Text" showValueHelp="false" enabled="false" visible="true" width="43.99305725097656px" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                                        <items>
+                                            <Label text="Simples Nacional" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                            <CheckBox text="" selected="true" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit" wrapping="false" useEntireWidth="true"/>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                </items>
+                                <layoutData/>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Quotation Items">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Quotation Items">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button text="Item Detail" icon="sap-icon://detail-view" iconFirst="false" type="Transparent" press="_onFioriObjectPageTableActionPress1">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button text="Codition" icon="sap-icon://simple-payment" iconFirst="false" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button text="Document" icon="sap-icon://documents" iconFirst="false" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button text="Divergence" icon="sap-icon://flag" iconFirst="false" type="Accept">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Item" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Material" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Qt." width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Dt. Necesidade" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Ut." width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Qt. Ofertada *" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Praz.Entrega (dias corridos) *" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Clas.Fiscal" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Preço unit. c/ICMS s/IPI *" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Marca Ofertada" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Volume" width="auto"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <ObjectStatus text="10"/>
+                                            <ObjectIdentifier title="ADAPTADOR RETO;" text="1252378"/>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="2" unit="Un" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                            <ObjectStatus text="30.05.2023"/>
+                                            <ObjectStatus text="2"/>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="2" unit="UN" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                            <ObjectStatus text="10"/>
+                                            <ObjectStatus text="73071920"/>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="150" unit="BRL 1 UN" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                            <ObjectStatus text="Philco"/>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="1" unit="Un" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <OverflowToolbar design="auto">
+                <content>
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

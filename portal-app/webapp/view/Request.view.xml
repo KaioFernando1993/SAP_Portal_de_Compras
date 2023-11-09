@@ -1,0 +1,9 @@
+<mvc:View controllerName="portalapp.controller.Request" 
+    xmlns:mvc="sap.ui.core.mvc"     
+    xmlns:hotspot="com.sap.build.standard.purchasingPortal.lib.hotspot">
+    <hotspot:LowFidelityPage src="/webapp/resources/Solicita__o.jpg" imageHeight="431.0924369747899" imageWidth="700" showHeader="false" showFooter="false" enableScrolling="true" showNavButton="false" showSubHeader="false">
+        <hotspot:hotspots>
+            <hotspot:Hotspot width="96.953125%" height="94.6969696969697%" top="0.2523359248505448%" left="1.0878010878010878%" backgroundColor="{applicationModel>/hotspotInfo/color}" press="_onHotspotPress"/>
+        </hotspot:hotspots>
+    </hotspot:LowFidelityPage>
+</mvc:View>

@@ -1,0 +1,369 @@
+<mvc:View controllerName="app.controller.DetalItem" 
+    xmlns:mvc="sap.ui.core.mvc"  
+    xmlns:uxap="sap.uxap" 
+    xmlns="sap.m">
+    <!-- Definição da visualização MVC com controlador -->
+    <uxap:ObjectPageLayout 
+        showTitleInHeaderContent="false" 
+        showHeaderContent="true" 
+        showEditHeaderButton="false" 
+        showFooter="false" 
+        class="sapUiSizeCompact">
+         <!-- Layout de página de objeto UXAP com várias configurações -->
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader 
+                objectTitle="6000678102" 
+                objectSubtitle="330277 - Artes Papelaria" 
+                isObjectIconAlwaysVisible="false" 
+                isObjectTitleAlwaysVisible="true" 
+                isObjectSubtitleAlwaysVisible="true" 
+                showPlaceholder="true" 
+                objectImageURI="/build/uilibraries/content/static/image-canvas.svg">
+                <uxap:navigationBar>
+                    <!-- Barra de navegação UXAP -->
+                    <Bar>
+                        <contentLeft>
+                            <Button type="Back" press="_onFioriObjectPageHeaderPress"/>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Title text="Detalhte do itemda Cotação"/>
+                        </contentMiddle>
+                        <contentRight/>
+                    </Bar>
+                </uxap:navigationBar>
+                <uxap:actions>
+                    <!-- Ações do objeto UXAP -->
+                    <Button text="Save" icon="sap-icon://save" iconFirst="false" type="Emphasized" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                    <Button text="" icon="sap-icon://action" iconFirst="true" type="Transparent" enabled="true">
+                        <layoutData>
+                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                        </layoutData>
+                    </Button>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:headerContent/>
+        <uxap:sections>
+            <!-- Seções do objeto UXAP -->
+            <uxap:ObjectPageSection title="Quotation Items">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Quotation Items">
+                        <uxap:blocks>
+                            <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="None">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <!-- Colunas da tabela -->
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Item" width="auto"/>
+                                        </header>
+                                    </Column>
+                                     <!-- Coluna com título "Item" -->
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Material" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <!-- Coluna com título "Material" -->
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Pr. Apr. Cot." width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <!-- Coluna com título "Pr. Apr. Cot." -->
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Quantidade" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <!-- Coluna com título "Quantidade" -->
+                                    <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Preço por" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <!-- Coluna com título "Preço por" -->
+                                    <Column width="auto" minScreenWidth="Phone">
+                                        <header>
+                                            <Text text="Dt. Necessidade" width="auto"/>
+                                        </header>
+                                    </Column>
+                                     <!-- Coluna com título "Dt. Necessidade" -->
+                                </columns>
+                                <items>
+                                    <!-- Itens da tabela -->
+                                    <ColumnListItem type="Active">
+                                        <!-- Item de coluna configurado como ativo -->
+                                        <cells>
+                                            <!-- Células do item da coluna -->
+                                            <ObjectStatus text="10"/>
+                                            <ObjectIdentifier title="ADAPTADOR RETO;" text="1252378"/>
+                                            <ObjectStatus text="30.05.2023"/>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="2" unit="Un" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                            <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                                <items>
+                                                    <ObjectNumber number="150" unit="BRL 1 UN" emphasized="false"/>
+                                                </items>
+                                            </HBox>
+                                            <ObjectStatus text="30.05.2023"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Item Description">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Item Description">
+                        <uxap:blocks>
+                            <VBox 
+                                alignItems="Stretch" 
+                                direction="Column" 
+                                fitContainer="false" 
+                                width="auto" 
+                                height="auto" 
+                                justifyContent="Start" 
+                                renderType="Div" 
+                                visible="true" 
+                                displayInline="false">
+                                <items>
+                                    <HBox 
+                                        alignItems="Stretch" 
+                                        direction="Row" 
+                                        fitContainer="false" 
+                                        width="auto" 
+                                        height="auto" 
+                                        justifyContent="Start" 
+                                        renderType="Div" 
+                                        visible="true" 
+                                        displayInline="false">
+                                        <items>
+                                            <VBox 
+                                                alignItems="Stretch" 
+                                                direction="Column" 
+                                                fitContainer="false" 
+                                                width="auto" 
+                                                height="auto" 
+                                                justifyContent="Start" 
+                                                renderType="Div" 
+                                                visible="true" 
+                                                displayInline="false">
+                                                <items>
+                                                    <Label 
+                                                        text="Texto do item  (somente leitura )" design="Standard" 
+                                                        width="100%" 
+                                                        required="false" 
+                                                        textAlign="Begin" 
+                                                        textDirection="Inherit" 
+                                                        visible="true"/>
+                                                    <TextArea 
+                                                        value="ADAPTADOR RETO; MACHO; POLIPROPILENO; EXTREMIDADES ROSCA BSP 3/8&quot;; PARA BICO DE ASPERSÃO REFERÊNCIA COMERCIAL SPRAYING SYSTEMS QPPA" rows="10" 
+                                                        cols="80" 
+                                                        maxLength="0" 
+                                                        wrapping="None" 
+                                                        enabled="true" 
+                                                        required="false" 
+                                                        valueStateText="Invalid entry" 
+                                                        visible="true"/>
+                                                </items>
+                                                <layoutData/>
+                                            </VBox>
+                                            <VBox 
+                                                alignItems="Stretch" 
+                                                direction="Column" 
+                                                fitContainer="false" 
+                                                width="auto" 
+                                                height="auto" 
+                                                justifyContent="Start" 
+                                                renderType="Div" 
+                                                visible="true" 
+                                                displayInline="false">
+                                                <items>
+                                                    <Label 
+                                                        text="Descrição completa do item (somente leitura )" design="Standard" 
+                                                        width="100%" 
+                                                        required="false" 
+                                                        textAlign="Begin" 
+                                                        textDirection="Inherit" 
+                                                        visible="true"/>
+                                                    <TextArea 
+                                                        value="ADAPTADOR RETO; MACHO; POLIPROPILENO; EXTREMIDADES ROSCA BSP 3/8&quot;; PARA BICO DE ASPERSÃO REFERÊNCIA COMERCIAL SPRAYING SYSTEMS QPPA" rows="10" 
+                                                        cols="80" 
+                                                        maxLength="0" 
+                                                        wrapping="None" 
+                                                        enabled="true" 
+                                                        required="false" 
+                                                        valueStateText="Invalid entry" 
+                                                        visible="true"/>
+                                                </items>
+                                                <layoutData/>
+                                            </VBox>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                    <HBox 
+                                        alignItems="Stretch" 
+                                        direction="Row" 
+                                        fitContainer="false" 
+                                        width="auto" 
+                                        height="auto" 
+                                        justifyContent="Center" 
+                                        renderType="Div" 
+                                        visible="true" 
+                                        displayInline="false">
+                                        <items>
+                                            <VBox 
+                                                alignItems="Stretch" 
+                                                direction="Column" 
+                                                fitContainer="false" 
+                                                width="auto" 
+                                                height="auto" 
+                                                justifyContent="Start" 
+                                                renderType="Div" 
+                                                visible="true" 
+                                                displayInline="false">
+                                                <items>
+                                                    <Label 
+                                                        text="Observações do Item  - Favor informar garantia  (limite máximo de 60 linhas )" design="Standard" 
+                                                        width="100%" 
+                                                        required="false" 
+                                                        textAlign="Begin" 
+                                                        textDirection="Inherit" 
+                                                        visible="true"/>
+                                                    <TextArea 
+                                                        value="" 
+                                                        rows="10" 
+                                                        cols="120" 
+                                                        maxLength="0" 
+                                                        wrapping="None" 
+                                                        enabled="true" 
+                                                        required="false" 
+                                                        valueStateText="Invalid entry" 
+                                                        visible="true"/>
+                                                </items>
+                                                <layoutData/>
+                                            </VBox>
+                                        </items>
+                                        <layoutData/>
+                                    </HBox>
+                                </items>
+                                <layoutData/>
+                            </VBox>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection title="Draw">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Draw">
+                        <uxap:blocks>
+                            <Table 
+                                width="100%" 
+                                growing="true" 
+                                growingScrollToLoad="true" 
+                                growingThreshold="25" 
+                                mode="SingleSelectLeft">
+                                <headerToolbar>
+                                    <OverflowToolbar design="Transparent">
+                                        <content>
+                                            <ToolbarSpacer/>
+                                            <Button 
+                                                text="Visualizar" 
+                                                icon="sap-icon://zoom-in" 
+                                                iconFirst="false" 
+                                                type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                            <Button icon="sap-icon://action-settings" type="Transparent">
+                                                <layoutData>
+                                                    <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                                </layoutData>
+                                            </Button>
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Desenho" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Item" width="auto"/>
+                                        </header>
+                                    </Column>
+                                    <Column width="auto" minScreenWidth="Tablet" demandPopin="true">
+                                        <header>
+                                            <Text text="Versão" width="auto"/>
+                                        </header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <ObjectStatus text="14315151"/>
+                                            <ObjectStatus text="01"/>
+                                            <ObjectStatus text="01"/>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer>
+            <!-- Rodapé do objeto UXAP -->
+            <OverflowToolbar design="auto">
+                <!-- Conteúdo da barra de ferramentas de overflow -->
+                <content>
+                    <ToolbarSpacer/>
+                    <Button 
+                        text="Save" 
+                        type="Emphasized" 
+                        iconFirst="true" 
+                        width="auto" 
+                        enabled="true" 
+                        visible="true" 
+                        iconDensityAware="false"/>
+                        <!-- Botão "Save" com várias configurações -->
+                    <Button 
+                        text="Cancel" 
+                        type="Default" 
+                        iconFirst="true" 
+                        width="auto" 
+                        enabled="true" 
+                        visible="true" 
+                        iconDensityAware="false"/>
+                        <!-- Botão "Cancel" com várias configurações -->
+                </content>
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>

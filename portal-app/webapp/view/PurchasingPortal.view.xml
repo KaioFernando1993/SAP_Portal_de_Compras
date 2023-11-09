@@ -1,0 +1,223 @@
+<mvc:View controllerName="portalapp.controller.PurchasingPortal"
+xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.f" 
+    xmlns:variants="sap.ui.comp.variants" 
+    xmlns="sap.m" 
+    xmlns:filterbar="sap.ui.comp.filterbar" 
+    xmlns:core="sap.ui.core" 
+    xmlns:layout1="sap.ui.layout">
+<f:DynamicPage headerExpanded="true" showFooter="false" class="sapUiSizeCompact">
+    <!-- -->
+        <f:title>
+             <!-- Este é o início da área de título da página -->
+            <f:DynamicPageTitle>
+                <!-- Aqui, definimos um título dinâmico para a página -->
+                <f:heading>
+                    <variants:VariantManagement/>
+                </f:heading>
+                <f:actions>
+                    <!-- Área de ações no título -->
+                    <ToolbarSpacer/>
+                    <Button icon="sap-icon://action" type="Transparent"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+             <!-- Este é o cabeçalho da página -->
+            <f:DynamicPageHeader pinnable="true">
+                <f:content>
+                    <filterbar:FilterBar id="ListReportFilterBar" useToolbar="false" showGoOnFB="true" searchEnabled="true">
+                    <!-- Adicionamos uma barra de filtro -->    
+                        <filterbar:filterItems>
+                            <!-- Itens de filtro -->
+                            <filterbar:FilterItem label="Active" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_ComboBoxFilter-1695254330264-75kadyy5ekyb3ekgcwz8pjmm2_S2---0">
+                                <!-- Definimos um controle para o filtro -->
+                                <filterbar:control>
+                                    <MultiComboBox>
+                                        <items>
+                                            <core:Item key="Yes" text="Yes"/>
+                                            <!-- Definimos opções para o MultiComboBox -->
+                                        </items>
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterItem>
+                            <filterbar:FilterItem label="Create date" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-sap_ui_comp_filterbar_FilterItem-1695254430601-75kadyy5ekyb3ekgcwz8pjmm2_S2---0">
+                                <filterbar:control>
+                                    <!-- Definimos um controle para o filtro -->
+                                    <DatePicker width="auto" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+                                </filterbar:control>
+                            </filterbar:FilterItem>
+                            <filterbar:FilterItem label="N° Quote" name="Fiori_ListReport_ListReport_0-filterBars-Fiori_ListReport_FilterBar-1-filters-Fiori_ListReport_StandardFilter-1695254744077-75kadyy5ekyb3ekgcwz8pjmm2_S2---0">
+                                <filterbar:control>
+                                    <MultiInput/>
+                                    <!-- É um controle MultiInput -->
+                                </filterbar:control>
+                            </filterbar:FilterItem>
+                        </filterbar:filterItems>
+                    </filterbar:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <!-- Conteúdo principal do cabeçalho -->
+            <VBox fitContainer="true">
+                <!-- Usando um VBox com ajuste de tamanho -->
+                <items>
+                    <layout1:VerticalLayout width="100%" visible="true">
+                        <!-- Layout vertical com largura total e visibilidade -->
+                        <layout1:content>
+                            <ObjectListItem intro="Suplier" title="330277-Artes Papelaria" icon="sap-icon://supplier" number="25" numberUnit="ITEM" numberState="None" type="Active" selected="false" showMarkers="false">
+                                <!-- Item de lista de objetos com várias propriedades configuradas -->
+                                <attributes/>
+                                <firstStatus/>
+                                <secondStatus/>
+                            </ObjectListItem>
+                        </layout1:content>
+                    </layout1:VerticalLayout>
+                    <Table width="100%" growing="true" growingScrollToLoad="true" growingThreshold="25" mode="SingleSelectLeft" updateFinished="_onFioriListReportTableUpdateFinished">
+                        <!-- Uma tabela com várias configurações -->
+                        <headerToolbar>
+                            <!-- Barra de ferramentas do cabeçalho -->
+                            <OverflowToolbar design="Transparent">
+                                <content>
+                                     <!-- Conteúdo da barra de ferramentas -->
+                                    <Title textAlign="Begin" text="Quotes"/>
+                                    <Title text="(1)"/>
+                                    <ToolbarSpacer/>
+                                    <Button text="Document" icon="sap-icon://documents" iconFirst="false" type="Transparent" enabled="true" press="_onFioriListReportActionButtonPress">
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button text="Detail" icon="sap-icon://detail-view" iconFirst="false" type="Transparent" enabled="true" press="_onFioriListReportActionButtonPress1">
+                                        <!-- Botão "Detail" com várias propriedades configuradas -->
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button text="Quote" icon="sap-icon://sales-quote" iconFirst="false" type="Transparent" enabled="true" press="_onFioriListReportActionButtonPress2">
+                                        <!-- Botão "Quote" com várias propriedades configuradas -->
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button text="Reject" icon="sap-icon://cancel" iconFirst="false" type="Transparent" enabled="true">
+                                        <!-- Botão "Reject" com várias propriedades configuradas -->
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                    <Button icon="sap-icon://action-settings" type="Transparent">
+                                        <!-- Botão de configurações com várias propriedades configuradas -->
+                                        <layoutData>
+                                            <OverflowToolbarLayoutData moveToOverflow="true"/>
+                                        </layoutData>
+                                    </Button>
+                                </content>
+                            </OverflowToolbar>
+                        </headerToolbar>
+                        <columns>
+                            <!-- Colunas da tabela -->
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Quote" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Description" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Create Date" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Deadline" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Site" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Quantity" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" hAlign="Right" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Value" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Company" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Status" width="auto"/>
+                                </header>
+                            </Column>
+                            <Column width="auto" minScreenWidth="Phone">
+                                <header>
+                                    <Text text="Reason for rejection" width="auto"/>
+                                </header>
+                            </Column>
+                        </columns>
+                        <items>
+                            <!-- Itens da tabela -->
+                            <ColumnListItem type="Active">
+                                <cells>
+                                    <!-- Células do item da coluna -->
+                                    <ObjectIdentifier title="6000678103-10" text=""/>
+                                    <!-- Identificador de objeto com título -->
+                                    <ObjectIdentifier title="12345678" text="Adaptador para tomadas eleticas"/>
+                                    <!-- Identificador de objeto com título e texto -->
+                                    <ObjectStatus text="21/11/2023" width="auto"/>
+                                    <!-- Status do objeto com texto e largura automática -->
+                                    <ObjectStatus text="21/12/2023" width="auto"/>
+                                    <ObjectStatus text="Timóteo" width="auto"/>
+                                    <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                        <!-- Uma HBox com várias configurações -->
+                                        <items>
+                                            <ObjectNumber number="3" unit="UN" emphasized="false"/>
+                                        </items>
+                                    </HBox>
+                                    <HBox alignItems="Stretch" justifyContent="End" alignContent="Stretch">
+                                        <items>
+                                            <ObjectNumber number="300" unit="BRL" emphasized="false"/>
+                                        </items>
+                                    </HBox>
+                                    <ObjectStatus text="AC01" width="auto"/>
+                                    <!-- Status do objeto com texto e largura automática -->
+                                    <ObjectStatus text="Open" width="auto" state="Success" icon="sap-icon://status-positive"/>
+                                    <!-- Status do objeto com texto, largura automática, estado de sucesso e ícone -->
+                                    <ObjectStatus text="" width="auto"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </items>
+            </VBox>
+        </f:content>
+        <f:footer>
+            <!-- Rodapé -->
+            <OverflowToolbar design="auto">
+                <!-- Barra de ferramentas com design automático -->
+                <content>
+                    <!-- Conteúdo da barra de ferramentas -->
+                    <ToolbarSpacer/>
+                    <Button text="Save" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <!-- Botão "Salvar" com várias configurações -->
+                    <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <!-- Botão "Cancelar" com várias configurações -->
+                </content>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

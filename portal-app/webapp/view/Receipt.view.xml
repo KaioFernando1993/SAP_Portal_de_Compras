@@ -1,0 +1,7 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="portalapp.controller.Receipt" xmlns:hotspot="com.sap.build.standard.purchasingPortal.lib.hotspot">
+    <hotspot:LowFidelityPage src="/webapp/resources/Recibo.jpg" imageHeight="466.93181818181813" imageWidth="700" showHeader="false" showFooter="false" enableScrolling="true" showNavButton="false" showSubHeader="false">
+        <hotspot:hotspots>
+            <hotspot:Hotspot width="97.65625%" height="99.06651108518086%" top="0%" left="0%" backgroundColor="{applicationModel>/hotspotInfo/color}" press="_onHotspotPress"/>
+        </hotspot:hotspots>
+    </hotspot:LowFidelityPage>
+</mvc:View>
